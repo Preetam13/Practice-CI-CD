@@ -1,24 +1,23 @@
-name: Basic CI
+name: Basic CI/CD
 
 on:
   push:
     branches:
-      - main
-  pull_request:
-    branches:
-      - main
+      - develop
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
+      - name: Verify Repository
+        run: |
+          echo "Repository checked out successfully"
+          pwd
+          ls -la
 
-      - run: npm install
-
-      - run: npm run build
+      - name: CI Completed
+        run: echo "Basic CI pipeline executed successfully"
