@@ -1,10 +1,13 @@
 name: Basic CI/CD
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+
 jobs:
-    hello:
-       runs-on: ubuntu latest
-       steps:
-         -name: Hello Step
-          run: echo"welcome to my practice CI/CD"
+  hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Hello Step
+        run: echo "Welcome to my practice CI/CD"
       
