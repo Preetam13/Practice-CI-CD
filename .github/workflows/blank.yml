@@ -1,13 +1,24 @@
 name: Basic CI/CD
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - develop
+
+  pull_request:
+    branches:
+      - develop
 
 jobs:
-  hello:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Hello Step
-        run: echo "Welcome to my practice CI/CD"
-      
+      - run: echo "Building..."
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "Testing..."
