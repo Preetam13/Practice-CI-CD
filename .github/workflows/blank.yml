@@ -1,23 +1,10 @@
 name: Basic CI/CD
 
-on:
-  push:
-    branches:
-      - develop
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Verify Repository
-        run: |
-          echo "Repository checked out successfully"
-          pwd
-          ls -la
-
-      - name: CI Completed
-        run: echo "Basic CI pipeline executed successfully"
+on: workflow_dispatch
+  jobs:
+    hello:
+       runs-on: ununtu latest
+       steps:
+         -name: Hello Step
+          run: echo "welcome to my practice CI/CD"
+      
