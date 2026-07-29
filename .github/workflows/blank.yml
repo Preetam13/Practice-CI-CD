@@ -23,7 +23,6 @@ jobs:
 
       - name: Build Application
         run: npm run build
-          node-version: 20
 
       - name: Run Tests
         run: npm test
