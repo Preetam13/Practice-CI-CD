@@ -1,13 +1,13 @@
-name: Build and Deploy
+name: Build and Deploy to Staging
 
 on:
   push:
     branches:
-      - main
+      - staging
 
   pull_request:
     branches:
-      - main
+      - staging
 
 jobs:
   build:
@@ -46,12 +46,11 @@ jobs:
           script: |
             cd /var/www/your-application
 
-            git pull origin main
+            git pull origin staging
 
             npm install
 
             npm run build
 
             pm2 restart your-application
-  
 
