@@ -52,5 +52,6 @@ jobs:
 
             npm run build
 
-            pm2 restart your-application
+            pm2 reload your-application
+
 
